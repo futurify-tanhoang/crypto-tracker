@@ -10,9 +10,10 @@ namespace CryptoTracker.Models
         public int Id { get; set; }
         public double BeforeBalance { get; set; }
         public double Amount { get; set; }
-        public TransactionAction Action { get; set; }
+        public CryptoAction Action { get; set; }
+        public string Note { get; set; }
 
         public int CryptoWalletId { get; set; }
-        public CryptoWallet Wallet { get; set; }
+        public CryptoWallet CryptoWallet { get; set; }
     }
 }

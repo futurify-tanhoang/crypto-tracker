@@ -11,8 +11,8 @@ using System;
 namespace CryptoTracker.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20180107175610_InitialDatabase")]
-    partial class InitialDatabase
+    [Migration("20180108154353_InitialDb")]
+    partial class InitialDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -66,7 +66,7 @@ namespace CryptoTracker.Migrations
 
                     b.Property<string>("ModifiedBy");
 
-                    b.Property<int>("Name");
+                    b.Property<string>("Name");
 
                     b.HasKey("Id");
 
@@ -85,6 +85,8 @@ namespace CryptoTracker.Migrations
                     b.Property<double>("BeforeBalance");
 
                     b.Property<int>("CryptoWalletId");
+
+                    b.Property<string>("Note");
 
                     b.HasKey("Id");
 
@@ -176,6 +178,8 @@ namespace CryptoTracker.Migrations
 
                     b.Property<string>("ModifiedBy");
 
+                    b.Property<string>("Note");
+
                     b.Property<int>("WalletId");
 
                     b.HasKey("Id");
@@ -195,7 +199,7 @@ namespace CryptoTracker.Migrations
 
             modelBuilder.Entity("CryptoTracker.Models.CryptoTransaction", b =>
                 {
-                    b.HasOne("CryptoTracker.Models.CryptoWallet", "Wallet")
+                    b.HasOne("CryptoTracker.Models.CryptoWallet", "CryptoWallet")
                         .WithMany()
                         .HasForeignKey("CryptoWalletId")
                         .OnDelete(DeleteBehavior.Cascade);

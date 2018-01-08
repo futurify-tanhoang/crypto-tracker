@@ -120,10 +120,58 @@
   <data name="ACCOUNT_HAS_NOT_VERIFIED" xml:space="preserve">
     <value>ACCOUNT_HAS_NOT_VERIFIED</value>
   </data>
+  <data name="ACCOUNT_IS_EXISTING" xml:space="preserve">
+    <value>ACCOUNT_IS_EXISTING</value>
+  </data>
+  <data name="ACCOUNT_IS_EXISTING_MSG" xml:space="preserve">
+    <value>Account is existing</value>
+  </data>
+  <data name="ACCOUNT_NOT_FOUND" xml:space="preserve">
+    <value>ACCOUNT_NOT_FOUND</value>
+  </data>
+  <data name="ACCOUNT_NOT_FOUND_MSG" xml:space="preserve">
+    <value>Account not found</value>
+  </data>
+  <data name="CRYPTO_WALLET_NOT_FOUND" xml:space="preserve">
+    <value>CRYPTO_WALLET_NOT_FOUND</value>
+  </data>
+  <data name="CRYPTO_WALLET_NOT_FOUND_MSG" xml:space="preserve">
+    <value>Crypto wallet not found</value>
+  </data>
+  <data name="CURRENCY_IS_EXISTING" xml:space="preserve">
+    <value>CURRENCY_IS_EXISTING</value>
+  </data>
+  <data name="CURRENCY_IS_EXISTING_MSG" xml:space="preserve">
+    <value>The currency is existing</value>
+  </data>
+  <data name="CURRENCY_NOT_FOUND" xml:space="preserve">
+    <value>CURRENCY_NOT_FOUND</value>
+  </data>
+  <data name="CURRENCY_NOT_FOUND_MSG" xml:space="preserve">
+    <value>Currency not found</value>
+  </data>
+  <data name="EMAIL_IS_USING_BY_ANOTHER_USER" xml:space="preserve">
+    <value>EMAIL_IS_USING_BY_ANOTHER_USER</value>
+  </data>
+  <data name="EMAIL_IS_USING_BY_ANOTHER_USER_MSG" xml:space="preserve">
+    <value>This email is used by another user</value>
+  </data>
   <data name="INCORRECT_LOGIN" xml:space="preserve">
     <value>INCORRECT_LOGIN</value>
   </data>
   <data name="INVALID_REQUEST" xml:space="preserve">
     <value>INVALID_REQUEST</value>
+  </data>
+  <data name="PHONE_NUMBER_IS_USED_BY_ANOTHER_USER" xml:space="preserve">
+    <value>PHONE_NUMBER_IS_USED_BY_ANOTHER_USER</value>
+  </data>
+  <data name="PHONE_NUMBER_IS_USED_BY_ANOTHER_USER_MSG" xml:space="preserve">
+    <value>The phone number is used by another user</value>
+  </data>
+  <data name="WALLET_NOT_FOUND" xml:space="preserve">
+    <value>WALLET_NOT_FOUND</value>
+  </data>
+  <data name="WALLET_NOT_FOUND_MSG" xml:space="preserve">
+    <value>Wallet not found</value>
   </data>
 </root>

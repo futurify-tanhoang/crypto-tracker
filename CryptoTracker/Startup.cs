@@ -61,6 +61,11 @@ namespace CryptoTracker
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IWalletService, WalletService>();
+            services.AddScoped<ICryptoCurrencyService, CryptoCurrencyService>();
+            services.AddScoped<ICryptoWalletService, CryptoWalletService>();
+
 
             #region app lifecycle
             // add cors

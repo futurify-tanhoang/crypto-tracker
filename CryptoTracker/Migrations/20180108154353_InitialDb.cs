@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace CryptoTracker.Migrations
 {
-    public partial class InitialDatabase : Migration
+    public partial class InitialDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,7 +19,7 @@ namespace CryptoTracker.Migrations
                     CreatedBy = table.Column<string>(nullable: true),
                     ModifiedAt = table.Column<DateTime>(nullable: true),
                     ModifiedBy = table.Column<string>(nullable: true),
-                    Name = table.Column<int>(nullable: false)
+                    Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -115,6 +115,7 @@ namespace CryptoTracker.Migrations
                     CreatedBy = table.Column<string>(nullable: true),
                     ModifiedAt = table.Column<DateTime>(nullable: true),
                     ModifiedBy = table.Column<string>(nullable: true),
+                    Note = table.Column<string>(nullable: true),
                     WalletId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -156,7 +157,8 @@ namespace CryptoTracker.Migrations
                     Action = table.Column<int>(nullable: false),
                     Amount = table.Column<double>(nullable: false),
                     BeforeBalance = table.Column<double>(nullable: false),
-                    CryptoWalletId = table.Column<int>(nullable: false)
+                    CryptoWalletId = table.Column<int>(nullable: false),
+                    Note = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

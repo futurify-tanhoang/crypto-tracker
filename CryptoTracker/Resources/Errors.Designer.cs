@@ -70,6 +70,114 @@ namespace CryptoTracker.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ACCOUNT_IS_EXISTING.
+        /// </summary>
+        internal static string ACCOUNT_IS_EXISTING {
+            get {
+                return ResourceManager.GetString("ACCOUNT_IS_EXISTING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account is existing.
+        /// </summary>
+        internal static string ACCOUNT_IS_EXISTING_MSG {
+            get {
+                return ResourceManager.GetString("ACCOUNT_IS_EXISTING_MSG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ACCOUNT_NOT_FOUND.
+        /// </summary>
+        internal static string ACCOUNT_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("ACCOUNT_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account not found.
+        /// </summary>
+        internal static string ACCOUNT_NOT_FOUND_MSG {
+            get {
+                return ResourceManager.GetString("ACCOUNT_NOT_FOUND_MSG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CRYPTO_WALLET_NOT_FOUND.
+        /// </summary>
+        internal static string CRYPTO_WALLET_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("CRYPTO_WALLET_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crypto wallet not found.
+        /// </summary>
+        internal static string CRYPTO_WALLET_NOT_FOUND_MSG {
+            get {
+                return ResourceManager.GetString("CRYPTO_WALLET_NOT_FOUND_MSG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CURRENCY_IS_EXISTING.
+        /// </summary>
+        internal static string CURRENCY_IS_EXISTING {
+            get {
+                return ResourceManager.GetString("CURRENCY_IS_EXISTING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The currency is existing.
+        /// </summary>
+        internal static string CURRENCY_IS_EXISTING_MSG {
+            get {
+                return ResourceManager.GetString("CURRENCY_IS_EXISTING_MSG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CURRENCY_NOT_FOUND.
+        /// </summary>
+        internal static string CURRENCY_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("CURRENCY_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Currency not found.
+        /// </summary>
+        internal static string CURRENCY_NOT_FOUND_MSG {
+            get {
+                return ResourceManager.GetString("CURRENCY_NOT_FOUND_MSG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EMAIL_IS_USING_BY_ANOTHER_USER.
+        /// </summary>
+        internal static string EMAIL_IS_USING_BY_ANOTHER_USER {
+            get {
+                return ResourceManager.GetString("EMAIL_IS_USING_BY_ANOTHER_USER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This email is used by another user.
+        /// </summary>
+        internal static string EMAIL_IS_USING_BY_ANOTHER_USER_MSG {
+            get {
+                return ResourceManager.GetString("EMAIL_IS_USING_BY_ANOTHER_USER_MSG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to INCORRECT_LOGIN.
         /// </summary>
         internal static string INCORRECT_LOGIN {
@@ -84,6 +192,42 @@ namespace CryptoTracker.Resources {
         internal static string INVALID_REQUEST {
             get {
                 return ResourceManager.GetString("INVALID_REQUEST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PHONE_NUMBER_IS_USED_BY_ANOTHER_USER.
+        /// </summary>
+        internal static string PHONE_NUMBER_IS_USED_BY_ANOTHER_USER {
+            get {
+                return ResourceManager.GetString("PHONE_NUMBER_IS_USED_BY_ANOTHER_USER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The phone number is used by another user.
+        /// </summary>
+        internal static string PHONE_NUMBER_IS_USED_BY_ANOTHER_USER_MSG {
+            get {
+                return ResourceManager.GetString("PHONE_NUMBER_IS_USED_BY_ANOTHER_USER_MSG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WALLET_NOT_FOUND.
+        /// </summary>
+        internal static string WALLET_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("WALLET_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wallet not found.
+        /// </summary>
+        internal static string WALLET_NOT_FOUND_MSG {
+            get {
+                return ResourceManager.GetString("WALLET_NOT_FOUND_MSG", resourceCulture);
             }
         }
     }
