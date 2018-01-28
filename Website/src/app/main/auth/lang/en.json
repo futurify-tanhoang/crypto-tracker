@@ -1,0 +1,21 @@
+﻿{
+  "login": {
+    "title": "Đăng nhập",
+    "remember": "Ghi nhớ đăng nhập",
+    "forgot_password": "Quên mật khẩu ?",
+    "login": "Đăng nhập",
+    "errors": {
+      "username_required": "Vui lòng nhập tài khoản",
+      "username_valid": "Tài khoản không hợp lệ",
+      "password_required": "Vui lòng nhập mật khẩu",
+      "incorrect": "Tài khoản hoặc mật khẩu không đúng",
+      "busy": "Hệ thống đang bận, vui lòng thử lại sau !"
+    }
+  },
+  "forgot_password": {
+    "forgot_password": "Gửi yêu cầu",
+    "errors": {
+      "username_required": "Vui lòng nhập tài khoản"
+    }
+  }
+}

@@ -22,6 +22,8 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using CryptoTracker.Models;
 using Microsoft.EntityFrameworkCore;
+using CryptoTracker.Middlewares;
+using CryptoTracker.Exceptions;
 
 namespace CryptoTracker
 {
@@ -59,13 +61,14 @@ namespace CryptoTracker
 
             // Try Add IHttpContextAccessor for get http context in db context
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<ValidateModelAttribute>();
 
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IWalletService, WalletService>();
             services.AddScoped<ICryptoCurrencyService, CryptoCurrencyService>();
             services.AddScoped<ICryptoWalletService, CryptoWalletService>();
-
+            services.AddScoped<IPermissionService, PermissionService>();
 
             #region app lifecycle
             // add cors
@@ -99,12 +102,18 @@ namespace CryptoTracker
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
+
+            app.UseCors("AllowAllOrigins");
+
+            app.UseCustomExceptionHandler();
+
+            app.UseAuthentication();
+
+            app.UseStaticFiles();
 
             app.UseMvc();
         }

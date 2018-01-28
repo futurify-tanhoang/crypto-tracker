@@ -9,9 +9,10 @@ namespace CryptoTracker.ServiceInterfaces
     public interface ICryptoWalletService
     {
         Task<CryptoWallet> GetAsync(int id);
-        Task AddCryptoWalletAsync(int walletId, CryptoWallet cryptoWallet);
-        Task<double> BuyAsync(int id, double amount, string note);
-        Task<double> SellAsync(int id, double amount, string note);
-        Task<double> WithdrawAsync(int id, int walletId, double amount);
+        Task<List<CryptoWallet>> GetByWalletIdAsync(int walletId);
+        Task<CryptoWallet> CreateAsync(CryptoWallet cryptoWallet);
+        Task<double> BuyAsync(int id, double quantity, double price, string note);
+        Task<double> SellAsync(int id, double quantity, double price, string note);
+        Task<double> WithdrawAsync(int id, int walletId, double price, double quantity);
     }
 }

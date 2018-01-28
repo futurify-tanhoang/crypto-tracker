@@ -106,6 +106,24 @@ namespace CryptoTracker.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CRYPTO_WALLET_IS_EXISTING.
+        /// </summary>
+        internal static string CRYPTO_WALLET_IS_EXISTING {
+            get {
+                return ResourceManager.GetString("CRYPTO_WALLET_IS_EXISTING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The crypro wallet is existing.
+        /// </summary>
+        internal static string CRYPTO_WALLET_IS_EXISTING_MSG {
+            get {
+                return ResourceManager.GetString("CRYPTO_WALLET_IS_EXISTING_MSG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CRYPTO_WALLET_NOT_FOUND.
         /// </summary>
         internal static string CRYPTO_WALLET_NOT_FOUND {
@@ -183,6 +201,15 @@ namespace CryptoTracker.Resources {
         internal static string INCORRECT_LOGIN {
             get {
                 return ResourceManager.GetString("INCORRECT_LOGIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INVALID_INPUT.
+        /// </summary>
+        internal static string INVALID_INPUT {
+            get {
+                return ResourceManager.GetString("INVALID_INPUT", resourceCulture);
             }
         }
         

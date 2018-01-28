@@ -13,7 +13,11 @@ namespace CryptoTracker.Models
         public string PhoneNumber { get; set; }
 
         public bool IsVerified { get; set; }
+        public bool IsSystemAdmin { get; set; }
         public string Password { get; set; }
+
+        public List<AccountRole> Roles { get; set; }
+        public List<AccountPermission> Permissions { get; set; }
 
         public int WalletId { get; set; }
         public Wallet Wallet { get; set; }

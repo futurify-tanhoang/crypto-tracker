@@ -33,6 +33,8 @@ namespace CryptoTracker.Migrations
 
                     b.Property<string>("FullName");
 
+                    b.Property<bool>("IsSystemAdmin");
+
                     b.Property<bool>("IsVerified");
 
                     b.Property<DateTime?>("ModifiedAt");
@@ -50,6 +52,32 @@ namespace CryptoTracker.Migrations
                     b.HasIndex("WalletId");
 
                     b.ToTable("Account");
+                });
+
+            modelBuilder.Entity("CryptoTracker.Models.AccountPermission", b =>
+                {
+                    b.Property<int>("AccountId");
+
+                    b.Property<string>("PermissionId");
+
+                    b.HasKey("AccountId", "PermissionId");
+
+                    b.HasIndex("PermissionId");
+
+                    b.ToTable("AccountPermission");
+                });
+
+            modelBuilder.Entity("CryptoTracker.Models.AccountRole", b =>
+                {
+                    b.Property<int>("AccountId");
+
+                    b.Property<int>("RoleId");
+
+                    b.HasKey("AccountId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AccountRole");
                 });
 
             modelBuilder.Entity("CryptoTracker.Models.CryptoCurrency", b =>
@@ -79,13 +107,15 @@ namespace CryptoTracker.Migrations
 
                     b.Property<int>("Action");
 
-                    b.Property<double>("Amount");
-
                     b.Property<double>("BeforeBalance");
 
                     b.Property<int>("CryptoWalletId");
 
                     b.Property<string>("Note");
+
+                    b.Property<double>("Price");
+
+                    b.Property<double>("Quantity");
 
                     b.HasKey("Id");
 
@@ -136,6 +166,59 @@ namespace CryptoTracker.Migrations
                     b.HasIndex("AccountId");
 
                     b.ToTable("LoginRecord");
+                });
+
+            modelBuilder.Entity("CryptoTracker.Models.Permission", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Display");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Permission");
+                });
+
+            modelBuilder.Entity("CryptoTracker.Models.Role", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime?>("CreatedAt");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTime?>("ModifiedAt");
+
+                    b.Property<string>("ModifiedBy");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Role");
+                });
+
+            modelBuilder.Entity("CryptoTracker.Models.RolePermission", b =>
+                {
+                    b.Property<string>("PermissionId");
+
+                    b.Property<int>("RoleId");
+
+                    b.Property<DateTime?>("CreatedAt");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTime?>("ModifiedAt");
+
+                    b.Property<string>("ModifiedBy");
+
+                    b.HasKey("PermissionId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("RolePermission");
                 });
 
             modelBuilder.Entity("CryptoTracker.Models.Wallet", b =>
@@ -196,6 +279,32 @@ namespace CryptoTracker.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("CryptoTracker.Models.AccountPermission", b =>
+                {
+                    b.HasOne("CryptoTracker.Models.Account", "Account")
+                        .WithMany("Permissions")
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("CryptoTracker.Models.Permission", "Permission")
+                        .WithMany()
+                        .HasForeignKey("PermissionId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("CryptoTracker.Models.AccountRole", b =>
+                {
+                    b.HasOne("CryptoTracker.Models.Account", "Account")
+                        .WithMany("Roles")
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("CryptoTracker.Models.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("CryptoTracker.Models.CryptoTransaction", b =>
                 {
                     b.HasOne("CryptoTracker.Models.CryptoWallet", "CryptoWallet")
@@ -222,6 +331,19 @@ namespace CryptoTracker.Migrations
                     b.HasOne("CryptoTracker.Models.Account", "Account")
                         .WithMany()
                         .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("CryptoTracker.Models.RolePermission", b =>
+                {
+                    b.HasOne("CryptoTracker.Models.Permission", "Permission")
+                        .WithMany()
+                        .HasForeignKey("PermissionId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("CryptoTracker.Models.Role", "Role")
+                        .WithMany("Permissions")
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using CryptoTracker.Models;
+using CryptoTracker.Setup;
 
 namespace CryptoTracker
 {
@@ -25,6 +26,9 @@ namespace CryptoTracker
                 {
                     var context = services.GetRequiredService<AppDbContext>();
                     AppDbContext.UpdateDatabase(context);
+
+                    services.ConfigurePermissions();
+                    services.ConfigureSystemAdmin();
                 }
                 catch (Exception ex)
                 {

@@ -132,6 +132,12 @@
   <data name="ACCOUNT_NOT_FOUND_MSG" xml:space="preserve">
     <value>Account not found</value>
   </data>
+  <data name="CRYPTO_WALLET_IS_EXISTING" xml:space="preserve">
+    <value>CRYPTO_WALLET_IS_EXISTING</value>
+  </data>
+  <data name="CRYPTO_WALLET_IS_EXISTING_MSG" xml:space="preserve">
+    <value>The crypro wallet is existing</value>
+  </data>
   <data name="CRYPTO_WALLET_NOT_FOUND" xml:space="preserve">
     <value>CRYPTO_WALLET_NOT_FOUND</value>
   </data>
@@ -158,6 +164,9 @@
   </data>
   <data name="INCORRECT_LOGIN" xml:space="preserve">
     <value>INCORRECT_LOGIN</value>
+  </data>
+  <data name="INVALID_INPUT" xml:space="preserve">
+    <value>INVALID_INPUT</value>
   </data>
   <data name="INVALID_REQUEST" xml:space="preserve">
     <value>INVALID_REQUEST</value>

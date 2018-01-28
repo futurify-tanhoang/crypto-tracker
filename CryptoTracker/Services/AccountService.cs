@@ -21,7 +21,7 @@ namespace CryptoTracker.Services
 
         public async Task<Account> GetAsync(int id)
         {
-            return await _context.Accounts.FindAsync(id);
+            return await _context.Accounts.Include(s => s.Wallet).FirstOrDefaultAsync(t => t.Id == id);
         }
 
         public async Task<Account> CheckEmailAsync(string email)
@@ -89,6 +89,16 @@ namespace CryptoTracker.Services
 
             account.PhoneNumber = phoneNumber;
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<string[]> GetPermissionsOfAccountAsync(int id)
+        {
+            var accountPermissions = await _context.AccountsPermissions.Where(a => a.AccountId == id).Select(p => p.PermissionId).ToListAsync();
+
+            var rolePermissions = await _context.AccountsRoles.Where(a => a.AccountId == id).SelectMany(r => r.Role.Permissions.Select(p => p.Permission.Id)).ToListAsync();
+
+            return accountPermissions.Union(rolePermissions).Distinct().ToArray();
+
         }
     }
 }

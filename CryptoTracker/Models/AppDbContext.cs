@@ -19,12 +19,19 @@ namespace CryptoTracker.Models
         }
 
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<AccountPermission> AccountsPermissions { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Permission> Permissions { get; set; }
+        public DbSet<RolePermission> RolesPermissions { get; set; }
+        public DbSet<AccountRole> AccountsRoles { get; set; }
         public DbSet<LoginRecord> LoginRecords { get; set; }
         public DbSet<Wallet> Wallets { get; set; }
         public DbSet<CryptoCurrency> CryptoCurrencies { get; set; }
         public DbSet<CryptoTransaction> CryptoTransactions { get; set; }
         public DbSet<WalletTransaction> WalletTransactions { get; set; }
         public DbSet<CryptoWallet> CryptoWallets { get; set; }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -38,6 +45,27 @@ namespace CryptoTracker.Models
 
                 entityType.Relational().TableName = entityType.ClrType.Name;
             }
+
+            //configure mapping many to many relationship
+            modelBuilder.Entity<AccountPermission>().HasKey(ap => new
+            {
+                ap.AccountId,
+                ap.PermissionId
+            });
+
+            //configure mapping many to many relationship
+            modelBuilder.Entity<AccountRole>().HasKey(ar => new
+            {
+                ar.AccountId,
+                ar.RoleId
+            });
+
+            //configure mapping many to many relationship
+            modelBuilder.Entity<RolePermission>().HasKey(rp => new
+            {
+                rp.PermissionId,
+                rp.RoleId
+            });
 
             base.OnModelCreating(modelBuilder);
         }

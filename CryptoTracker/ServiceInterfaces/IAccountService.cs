@@ -14,5 +14,6 @@ namespace CryptoTracker.ServiceInterfaces
         Task UpdateEmailAsync(int id, string email);
         Task UpdatePhoneNumberAsync(int id, string phoneNumber);
         Task<Account> CheckEmailAsync(string email);
+        Task<string[]> GetPermissionsOfAccountAsync(int id);
     }
 }

@@ -1,0 +1,58 @@
+﻿<div id="login" class="flex-scrollable" layout="column" ms-scroll>
+    <div id="login-form-wrapper" layout="column" layout-align="center center">
+        <div id="login-form" class="md-whiteframe-8dp">
+            <div class="logo md-accent-bg">
+                <span>C</span>
+            </div>
+
+            <div class="title" translate="login.title">Đăng nhập</div>
+
+            <form name="loginForm" novalidate ng-submit="vm.loginfunction()">
+                <div ng-messages="vm.error" role="alert" class="error-messages-animation md-warn" ng-class="{'invalid': vm.error}">
+                    <div ng-message="incorrect" class="error-message-animation">
+                        <span translate="login.errors.incorrect"></span>
+                    </div>
+                    <div ng-message="busy" class="error-message-animation">
+                        <span translate="login.errors.busy"></span>
+                    </div>
+                    <div ng-message="denied" class="error-message-animation">
+                        <span translate="login.errors.incorrect"></span>
+                    </div>
+                </div>
+                <md-input-container class="md-block" md-no-float>
+                    <input type="text" name="username" ng-model="vm.login.username" placeholder="Tài khoản" required>
+                    <div ng-messages="loginForm.username.$error" role="alert" multiple>
+                        <div ng-message="required">
+                            <span translate="login.errors.username_required"></span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" md-no-float>
+                    <input type="password" name="password" ng-model="vm.login.password" placeholder="Mật khẩu"
+                           required>
+                    <div ng-messages="loginForm.password.$error" role="alert">
+                        <div ng-message="required">
+                            <span translate="login.errors.password_required"></span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <div class="remember-forgot-password" layout="row" layout-xs="column"
+                     layout-align="space-between center">
+                    <md-checkbox class="remember-me" ng-model="vm.login.remember" aria-label="Remember Me">
+                        <span translate="login.remember"></span>
+                    </md-checkbox>
+
+                    <a ui-sref="app.auth_forgot-password" class="forgot-password md-accent-color"
+                       translate="login.forgot_password"></a>
+                </div>
+
+                <md-button type="submit" class="md-raised md-accent submit-button" aria-label="LOG IN"
+                           ng-disabled="loginForm.$invalid || loginForm.$pristine"
+                           translate="login.login" translate-attr-aria-label="login.login">
+                </md-button>
+            </form>
+        </div>
+    </div>
+</div>

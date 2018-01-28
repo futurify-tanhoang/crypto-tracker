@@ -1,0 +1,9 @@
+﻿{
+  "COMMON": {
+    "YES": "Có",
+    "NO": "Không"
+  },
+  "ERRORS": {
+    "REQUIRED": "Trường này là bắt buộc"
+  }
+}

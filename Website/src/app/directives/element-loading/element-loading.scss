@@ -1,0 +1,41 @@
+﻿[element-loading] {
+    position: relative;
+
+    .element-loading {
+        display: none;
+        position: absolute;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        background: rgba(128, 128, 128, 0.20);
+
+        &.loading {
+            display: block;
+        }
+
+        .loader {
+            border: 2px solid #f3f3f3; /* Light grey */
+            border-top: 2px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: element-loading-spin 2s linear infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        @keyframes element-loading-spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    }
+}

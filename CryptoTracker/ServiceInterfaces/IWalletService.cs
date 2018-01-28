@@ -11,6 +11,6 @@ namespace CryptoTracker.ServiceInterfaces
         Task<Wallet> GetAsync(int id);
         Task<double> DepositAsync(int walletId, double amount, string note);
         Task<double> WithdrawAsync(int walletId, double amount, string note);
-        Task<double> TransferToCryptoAsync(int walletId, int cryptoWalletId, double amount);
+        Task<double> TransferToCryptoAsync(int walletId, int cryptoWalletId, double price, double quantity);
     }
 }

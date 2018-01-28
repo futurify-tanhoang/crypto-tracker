@@ -43,7 +43,7 @@ namespace CryptoTracker.Services
             return wallet.Balance;
         }
 
-        public async Task<double> TransferToCryptoAsync(int walletId, int cryptoWalletId, double amount)
+        public async Task<double> TransferToCryptoAsync(int walletId, int cryptoWalletId, double price, double quantity)
         {
             var wallet = await GetAsync(walletId);
             if (wallet == null)
@@ -56,6 +56,7 @@ namespace CryptoTracker.Services
                 throw new CustomException(Errors.WALLET_NOT_FOUND, Errors.WALLET_NOT_FOUND_MSG);
             }
 
+            var amount = price * quantity;
             //update balance of wallet
             var beforeBanalce = wallet.Balance;
             wallet.Balance -= amount;
@@ -65,10 +66,10 @@ namespace CryptoTracker.Services
 
             //update balance of crypto wallet
             beforeBanalce = cryptoWallet.Balance;
-            cryptoWallet.Balance += amount;
+            cryptoWallet.Balance += quantity;
 
             //add crypto transaction history
-            _context.CryptoTransactions.Add(new CryptoTransaction { Action = CryptoAction.Deposit, Amount = amount, BeforeBalance = beforeBanalce, CryptoWalletId = cryptoWalletId, Note = "Receiving from my wallet" });
+            _context.CryptoTransactions.Add(new CryptoTransaction { Action = CryptoAction.Deposit, Price = price, Quantity = quantity, BeforeBalance = beforeBanalce, CryptoWalletId = cryptoWalletId, Note = "Receiving from my wallet" });
 
             await _context.SaveChangesAsync();
 
