@@ -1,9 +1,9 @@
 ﻿{
   "COMMON": {
-    "YES": "Có",
-    "NO": "Không"
+    "YES": "Yes",
+    "NO": "No"
   },
   "ERRORS": {
-    "REQUIRED": "Trường này là bắt buộc"
+    "REQUIRED": "This field is required"
   }
 }

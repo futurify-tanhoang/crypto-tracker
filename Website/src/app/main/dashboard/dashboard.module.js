@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msApiProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider
@@ -21,6 +21,20 @@
                 },
                 protect: true
             });
+
+        // Navigation
+        //msNavigationServiceProvider.saveItem('dashboard', {
+        //    title: 'Dashboard',
+        //    group: true,
+        //    weight: 1
+        //});
+
+        msNavigationServiceProvider.saveItem('dashboard', {
+            title: 'Dashboard',
+            icon: 'icon-view-dashboard',
+            state: 'app.dashboard',
+            weight: 1
+        });
 
         // Translation
         $translatePartialLoaderProvider.addPart('app/main/dashboard');

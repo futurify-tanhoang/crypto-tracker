@@ -1,29 +1,30 @@
-﻿using CryptoTracker.ServiceInterfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CryptoTracker.Authentication;
+using CryptoTracker.Exceptions;
 using CryptoTracker.Models;
-using System.Security.Claims;
-using Microsoft.EntityFrameworkCore;
 using CryptoTracker.Resources;
+using CryptoTracker.ServiceInterfaces;
 using Microsoft.AspNetCore.Identity;
-using CryptoTracker.Helpers;
-using CryptoTracker.Authentication;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace CryptoTracker.Services
 {
     public class AuthenticationService : IAuthenticationService
     {
         AppDbContext _context;
+        private IAccountService _accountService;
         private JwtTokenOptions _jwtTokenOptions;
 
-        public AuthenticationService(AppDbContext context, IOptions<JwtTokenOptions> jwtTokenOptions)
+        public AuthenticationService(AppDbContext context, IAccountService accountService, IOptions<JwtTokenOptions> jwtTokenOptions)
         {
             _context = context;
             _jwtTokenOptions = jwtTokenOptions.Value;
+            _accountService = accountService;
         }
 
         public async Task<(string AccessToken, DateTime ExpiredAt, Account Identity)> LoginAsync(string userName, string password)
@@ -76,6 +77,7 @@ namespace CryptoTracker.Services
 
             await _context.SaveChangesAsync();
 
+            var permissions = await _accountService.GetPermissionsOfAccountAsync(account.Id);
             var issuedTime = DateTime.UtcNow;
             var expiration = (int)_jwtTokenOptions.Expiration.TotalSeconds;
             var expiredAt = DateTime.Now.AddSeconds(expiration);
@@ -86,7 +88,7 @@ namespace CryptoTracker.Services
                 new Claim(JwtRegisteredClaimNames.Jti, loginRecord.Id.ToString()),
                 new Claim(JwtRegisteredClaimNames.Iat, (issuedTime.Subtract(new DateTime(1970, 1, 1))).TotalSeconds.ToString(), ClaimValueTypes.Integer64),
                 new Claim("USER:ID", account.Id.ToString())
-            };
+            }.Concat(permissions.Select(p => new Claim(ClaimTypes.Role, p)));
 
             var jwt = new JwtSecurityToken(
                 issuer: _jwtTokenOptions.Issuer,

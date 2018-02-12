@@ -19,6 +19,7 @@
 
             // my modules
             'app.dashboard',
-            'app.auth'
+            'app.auth',
+            'app.cryptocurrency'
         ]);
 })();

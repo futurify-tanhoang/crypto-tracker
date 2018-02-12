@@ -92,7 +92,7 @@
 
                     userPermissions = [];
                     service.account = null;
-                    service.isLoggedIn = false;
+                    service.IsLoggedIn = false;
 
                     $cookies.remove('access_token');
                     $rootScope.$emit('AUTH_SIGNED_OUT');
@@ -107,7 +107,7 @@
         }
 
         function hasPermissions(permissions) {
-            if (!service.isLoggedIn) {
+            if (!service.IsLoggedIn) {
                 return false;
             } else if (permissions) {
                 if (permissions.constructor !== Array) {
@@ -133,7 +133,7 @@
         function getUserPermissionsAsync() {
             var deferer = $q.defer();
 
-            if (!service.isLoggedIn) {
+            if (!service.IsLoggedIn) {
                 deferer.reject();
             } else if (userPermissions && userPermissions.length) {
                 deferer.resolve(angular.copy(userPermissions));

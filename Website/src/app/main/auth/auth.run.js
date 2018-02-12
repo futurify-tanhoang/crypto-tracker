@@ -61,7 +61,7 @@
 
                 alert('Your logged in session has been expired, please sign in again!');
 
-                _authService.Logout();
+                //_authService.Logout();
 
                 _authService.SetRedirectAfterLogin($state.current.name, angular.copy($stateParams));
                 $state.go('app.auth_login');

@@ -11,7 +11,7 @@ using System;
 namespace CryptoTracker.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20180128130452_InitialDb")]
+    [Migration("20180208110454_InitialDb")]
     partial class InitialDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,7 +28,7 @@ namespace CryptoTracker.Migrations
 
                     b.Property<DateTime?>("CreatedAt");
 
-                    b.Property<string>("CreatedBy");
+                    b.Property<int?>("CreatedBy");
 
                     b.Property<string>("Email");
 
@@ -40,7 +40,7 @@ namespace CryptoTracker.Migrations
 
                     b.Property<DateTime?>("ModifiedAt");
 
-                    b.Property<string>("ModifiedBy");
+                    b.Property<int?>("ModifiedBy");
 
                     b.Property<string>("Password");
 
@@ -88,11 +88,11 @@ namespace CryptoTracker.Migrations
 
                     b.Property<DateTime?>("CreatedAt");
 
-                    b.Property<string>("CreatedBy");
+                    b.Property<int?>("CreatedBy");
 
                     b.Property<DateTime?>("ModifiedAt");
 
-                    b.Property<string>("ModifiedBy");
+                    b.Property<int?>("ModifiedBy");
 
                     b.Property<string>("Name");
 
@@ -134,13 +134,13 @@ namespace CryptoTracker.Migrations
 
                     b.Property<DateTime?>("CreatedAt");
 
-                    b.Property<string>("CreatedBy");
+                    b.Property<int?>("CreatedBy");
 
                     b.Property<int>("CryptoCurrencyId");
 
                     b.Property<DateTime?>("ModifiedAt");
 
-                    b.Property<string>("ModifiedBy");
+                    b.Property<int?>("ModifiedBy");
 
                     b.Property<int>("WalletId");
 
@@ -188,11 +188,11 @@ namespace CryptoTracker.Migrations
 
                     b.Property<DateTime?>("CreatedAt");
 
-                    b.Property<string>("CreatedBy");
+                    b.Property<int?>("CreatedBy");
 
                     b.Property<DateTime?>("ModifiedAt");
 
-                    b.Property<string>("ModifiedBy");
+                    b.Property<int?>("ModifiedBy");
 
                     b.Property<string>("Name");
 
@@ -209,11 +209,11 @@ namespace CryptoTracker.Migrations
 
                     b.Property<DateTime?>("CreatedAt");
 
-                    b.Property<string>("CreatedBy");
+                    b.Property<int?>("CreatedBy");
 
                     b.Property<DateTime?>("ModifiedAt");
 
-                    b.Property<string>("ModifiedBy");
+                    b.Property<int?>("ModifiedBy");
 
                     b.HasKey("PermissionId", "RoleId");
 
@@ -231,11 +231,11 @@ namespace CryptoTracker.Migrations
 
                     b.Property<DateTime?>("CreatedAt");
 
-                    b.Property<string>("CreatedBy");
+                    b.Property<int?>("CreatedBy");
 
                     b.Property<DateTime?>("ModifiedAt");
 
-                    b.Property<string>("ModifiedBy");
+                    b.Property<int?>("ModifiedBy");
 
                     b.HasKey("Id");
 
@@ -255,11 +255,11 @@ namespace CryptoTracker.Migrations
 
                     b.Property<DateTime?>("CreatedAt");
 
-                    b.Property<string>("CreatedBy");
+                    b.Property<int?>("CreatedBy");
 
                     b.Property<DateTime?>("ModifiedAt");
 
-                    b.Property<string>("ModifiedBy");
+                    b.Property<int?>("ModifiedBy");
 
                     b.Property<string>("Note");
 

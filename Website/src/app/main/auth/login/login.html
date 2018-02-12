@@ -2,10 +2,8 @@
     <div id="login-form-wrapper" layout="column" layout-align="center center">
         <div id="login-form" class="md-whiteframe-8dp">
             <div class="logo md-accent-bg">
-                <span>C</span>
+                <span></span>
             </div>
-
-            <div class="title" translate="login.title">Đăng nhập</div>
 
             <form name="loginForm" novalidate ng-submit="vm.loginfunction()">
                 <div ng-messages="vm.error" role="alert" class="error-messages-animation md-warn" ng-class="{'invalid': vm.error}">
@@ -20,7 +18,7 @@
                     </div>
                 </div>
                 <md-input-container class="md-block" md-no-float>
-                    <input type="text" name="username" ng-model="vm.login.username" placeholder="Tài khoản" required>
+                    <input type="text" name="username" ng-model="vm.login.username" placeholder="Email" required>
                     <div ng-messages="loginForm.username.$error" role="alert" multiple>
                         <div ng-message="required">
                             <span translate="login.errors.username_required"></span>
@@ -29,7 +27,7 @@
                 </md-input-container>
 
                 <md-input-container class="md-block" md-no-float>
-                    <input type="password" name="password" ng-model="vm.login.password" placeholder="Mật khẩu"
+                    <input type="password" name="password" ng-model="vm.login.password" placeholder="Password"
                            required>
                     <div ng-messages="loginForm.password.$error" role="alert">
                         <div ng-message="required">

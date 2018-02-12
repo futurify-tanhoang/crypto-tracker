@@ -1,0 +1,26 @@
+﻿.page-layout {
+    padding: 20px;
+
+    .content {
+        .white-bg{
+            padding: 20px
+        }
+    }
+}
+
+
+.left{
+    text-align: left;
+}
+
+.center{
+    text-align: center;
+}
+
+.right{
+    text-align: right;
+}
+
+a:hover{
+    cursor: pointer;
+}

@@ -1,12 +1,11 @@
-﻿using CryptoTracker.ServiceInterfaces;
-using System;
+﻿using CryptoTracker.Exceptions;
+using CryptoTracker.Models;
+using CryptoTracker.Resources;
+using CryptoTracker.ServiceInterfaces;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CryptoTracker.Models;
-using Microsoft.EntityFrameworkCore;
-using CryptoTracker.Helpers;
-using CryptoTracker.Resources;
 
 namespace CryptoTracker.Services
 {

@@ -1,0 +1,16 @@
+﻿<div id="faq-list" class="page-layout simple fullwidth doc-page element-doc-page">
+    <div class="content">
+        <div class="md-title mb-32">Manage Cryptocurrency</div>
+        <div class="white-bg md-whiteframe-4dp">
+            <div layout="row">
+                <span flex></span>
+                <md-button class="md-accent md-raised" ng-click="vm.add($event)">
+                    Add new
+                </md-button>
+            </div>
+            <div layout="column">
+                <table datatable dt-options="vm.dtOptions" dt-columns="vm.dtColumns" dt-instance="vm.dtInstanceCallback" class="row-border hover"></table>
+            </div>
+        </div>
+    </div>
+</div>

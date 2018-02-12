@@ -1,6 +1,6 @@
 ﻿#login {
     height: 100%;
-    background: url('/assets/images/backgrounds/march.jpg') no-repeat;
+    background: url('/assets/images/backgrounds/crypto-background.jpg') no-repeat;
     background-size: cover;
 
     #login-form-wrapper {
@@ -23,6 +23,8 @@
                 margin: 32px auto;
                 color: #FFFFFF;
                 border-radius: 2px;
+                background: url('../../../../assets/images/logo.png') no-repeat center;
+                background-size: 100%
             }
 
             .title {

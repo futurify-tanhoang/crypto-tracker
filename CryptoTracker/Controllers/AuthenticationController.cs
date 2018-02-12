@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using CryptoTracker.ServiceInterfaces;
-using CryptoTracker.Authentication;
-using Microsoft.Extensions.Options;
-using CryptoTracker.Models.ViewModels;
+﻿using CryptoTracker.Authentication;
+using CryptoTracker.Exceptions;
 using CryptoTracker.Models.BindingModels;
-using CryptoTracker.Helpers;
+using CryptoTracker.Models.ViewModels;
 using CryptoTracker.Resources;
+using CryptoTracker.ServiceInterfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using System.Threading.Tasks;
 
 namespace CryptoTracker.Controllers
 {

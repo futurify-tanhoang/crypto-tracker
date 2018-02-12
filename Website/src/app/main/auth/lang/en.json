@@ -1,21 +1,21 @@
 ﻿{
   "login": {
-    "title": "Đăng nhập",
-    "remember": "Ghi nhớ đăng nhập",
-    "forgot_password": "Quên mật khẩu ?",
-    "login": "Đăng nhập",
+    "title": "Login",
+    "remember": "Remember me",
+    "forgot_password": "Forgot password?",
+    "login": "Login",
     "errors": {
-      "username_required": "Vui lòng nhập tài khoản",
-      "username_valid": "Tài khoản không hợp lệ",
-      "password_required": "Vui lòng nhập mật khẩu",
-      "incorrect": "Tài khoản hoặc mật khẩu không đúng",
-      "busy": "Hệ thống đang bận, vui lòng thử lại sau !"
+      "username_required": "Email is required",
+      "username_valid": "Email invalid",
+      "password_required": "Password is required",
+      "incorrect": "Email or password is wrong",
+      "busy": "The system is a bit busy, please try later!"
     }
   },
   "forgot_password": {
-    "forgot_password": "Gửi yêu cầu",
+    "forgot_password": "Reset password",
     "errors": {
-      "username_required": "Vui lòng nhập tài khoản"
+      "username_required": "Email is required"
     }
   }
 }

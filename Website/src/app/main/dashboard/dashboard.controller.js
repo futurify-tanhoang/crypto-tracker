@@ -10,6 +10,12 @@
     function DashboardController(SVCS, DashboardService, $scope, $translate) {
         var vm = this;
 
-        
+        vm.deposit = function (type) {
+
+        }
+
+        vm.withdraw = function (type) {
+
+        }
     }
 })();

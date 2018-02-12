@@ -1,0 +1,21 @@
+#dashboard{
+    .crypto{
+        margin-bottom: 40px;
+        md-card{
+            background: url('../../../assets/images/backgrounds/chart.png') bottom no-repeat;
+            background-size: 100%;
+            background-color: #fff;
+
+            md-card-content{
+                .name{
+                    font-weight: bold;
+                    font-size: 22px;
+                }
+
+                .amount{
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

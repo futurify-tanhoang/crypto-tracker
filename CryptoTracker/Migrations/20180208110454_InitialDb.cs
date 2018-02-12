@@ -16,9 +16,9 @@ namespace CryptoTracker.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreatedAt = table.Column<DateTime>(nullable: true),
-                    CreatedBy = table.Column<string>(nullable: true),
+                    CreatedBy = table.Column<int>(nullable: true),
                     ModifiedAt = table.Column<DateTime>(nullable: true),
-                    ModifiedBy = table.Column<string>(nullable: true),
+                    ModifiedBy = table.Column<int>(nullable: true),
                     Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -45,9 +45,9 @@ namespace CryptoTracker.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreatedAt = table.Column<DateTime>(nullable: true),
-                    CreatedBy = table.Column<string>(nullable: true),
+                    CreatedBy = table.Column<int>(nullable: true),
                     ModifiedAt = table.Column<DateTime>(nullable: true),
-                    ModifiedBy = table.Column<string>(nullable: true),
+                    ModifiedBy = table.Column<int>(nullable: true),
                     Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -63,9 +63,9 @@ namespace CryptoTracker.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Balance = table.Column<double>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: true),
-                    CreatedBy = table.Column<string>(nullable: true),
+                    CreatedBy = table.Column<int>(nullable: true),
                     ModifiedAt = table.Column<DateTime>(nullable: true),
-                    ModifiedBy = table.Column<string>(nullable: true)
+                    ModifiedBy = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -79,9 +79,9 @@ namespace CryptoTracker.Migrations
                     PermissionId = table.Column<string>(nullable: false),
                     RoleId = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: true),
-                    CreatedBy = table.Column<string>(nullable: true),
+                    CreatedBy = table.Column<int>(nullable: true),
                     ModifiedAt = table.Column<DateTime>(nullable: true),
-                    ModifiedBy = table.Column<string>(nullable: true)
+                    ModifiedBy = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -107,13 +107,13 @@ namespace CryptoTracker.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreatedAt = table.Column<DateTime>(nullable: true),
-                    CreatedBy = table.Column<string>(nullable: true),
+                    CreatedBy = table.Column<int>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     FullName = table.Column<string>(nullable: true),
                     IsSystemAdmin = table.Column<bool>(nullable: false),
                     IsVerified = table.Column<bool>(nullable: false),
                     ModifiedAt = table.Column<DateTime>(nullable: true),
-                    ModifiedBy = table.Column<string>(nullable: true),
+                    ModifiedBy = table.Column<int>(nullable: true),
                     Password = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
                     WalletId = table.Column<int>(nullable: false)
@@ -137,10 +137,10 @@ namespace CryptoTracker.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Balance = table.Column<double>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: true),
-                    CreatedBy = table.Column<string>(nullable: true),
+                    CreatedBy = table.Column<int>(nullable: true),
                     CryptoCurrencyId = table.Column<int>(nullable: false),
                     ModifiedAt = table.Column<DateTime>(nullable: true),
-                    ModifiedBy = table.Column<string>(nullable: true),
+                    ModifiedBy = table.Column<int>(nullable: true),
                     WalletId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -170,9 +170,9 @@ namespace CryptoTracker.Migrations
                     Amount = table.Column<double>(nullable: false),
                     BeforeBalance = table.Column<double>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: true),
-                    CreatedBy = table.Column<string>(nullable: true),
+                    CreatedBy = table.Column<int>(nullable: true),
                     ModifiedAt = table.Column<DateTime>(nullable: true),
-                    ModifiedBy = table.Column<string>(nullable: true),
+                    ModifiedBy = table.Column<int>(nullable: true),
                     Note = table.Column<string>(nullable: true),
                     WalletId = table.Column<int>(nullable: false)
                 },
